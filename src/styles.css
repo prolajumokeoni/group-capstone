@@ -1,3 +1,20 @@
 body {
   background-color: rgb(235, 232, 232);
 }
+
+.logo {
+  width: 6rem;
+}
+
+.movies-display {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.movie-container {
+  width: 20%;
+  margin: 20px 0;
+}

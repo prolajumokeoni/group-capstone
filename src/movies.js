@@ -23,7 +23,7 @@ const displayMovies = async () => {
                 <img src="${image}" />
                 </div>
                 <div>
-                    <h2>${movies[i].show.name}</h2>
+                    <h6>${movies[i].show.name}</h6>
                 </div>
         </div>`);
   }
