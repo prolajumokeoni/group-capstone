@@ -1,6 +1,13 @@
-const genre = 'animation';
+const genre = [
+  'action',
+  'horror',
+  'animation',
+  'adventure',
+  'family'
+];
+const randGenre = genre[Math.floor(Math.random() * genre.length)];
 const linkBase = 'https://api.tvmaze.com/search/shows';
-const searchURL = `https://api.tvmaze.com/search/shows?q=${genre}`;
+const searchURL = `https://api.tvmaze.com/search/shows?q=${randGenre}`;
 
 let id;
 
