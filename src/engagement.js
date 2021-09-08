@@ -17,7 +17,7 @@ const createComment = async (obj) => {
         body: JSON.stringify(commentBody),
     });
 
-    return response;
+    return response.status;
 };
 
 const getComments = async (id) => {
