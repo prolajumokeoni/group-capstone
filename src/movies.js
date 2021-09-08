@@ -1,5 +1,5 @@
-import { pullMovies } from './api';
-import displayPopup from './engagement';
+import { pullMovies } from './api.js';
+import displayPopup from './engagement.js';
 
 const getCount = () => {
   const movieCount = document.getElementById('movies').children.length;
@@ -28,11 +28,11 @@ const displayMovies = async () => {
                 </div>
                 <button data-id="${movies[i].show.id}" class="btn-comments">Comments</button>
         </div>`);
-        const button = document.querySelectorAll(`[data-id="${movies[i].show.id}"]`)[0];
-        button.addEventListener('click', (e) => {
-          const movieId = e.target.getAttribute('data-id');
-          displayPopup(movieId);
-        });
+    const button = document.querySelectorAll(`[data-id="${movies[i].show.id}"]`)[0];
+    button.addEventListener('click', (e) => {
+      const movieId = e.target.getAttribute('data-id');
+      displayPopup(movieId);
+    });
   }
 
   const movieCount = getCount();

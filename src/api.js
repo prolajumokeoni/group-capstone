@@ -11,7 +11,7 @@ const pullMovies = async () => {
 
 const pullId = async (id) => {
   const response = await fetch(linkBase + id);
-  const movie= await response.json();
+  const movie = await response.json();
 
   return movie;
 };
