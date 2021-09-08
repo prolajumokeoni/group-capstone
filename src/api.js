@@ -1,15 +1,6 @@
-const genre = [
-  'action',
-  'horror',
-  'animation',
-  'adventure',
-  'family'
-];
-const randGenre = genre[Math.floor(Math.random() * genre.length)];
-const linkBase = 'https://api.tvmaze.com/search/shows';
-const searchURL = `https://api.tvmaze.com/search/shows?q=${randGenre}`;
-
-let id;
+const genre = 'animation';
+const linkBase = 'https://api.tvmaze.com/shows/';
+const searchURL = `https://api.tvmaze.com/search/shows?q=${genre}`;
 
 const pullMovies = async () => {
   const response = await fetch(searchURL);
@@ -18,12 +9,12 @@ const pullMovies = async () => {
   return movies;
 };
 
-const movieId = async () => {
+const pullId = async (id) => {
   const response = await fetch(linkBase + id);
-  const movies = await response.json();
+  const movie = await response.json();
 
-  return movies;
+  return movie;
 };
 
-exports.movieId = movieId;
+exports.pullId = pullId;
 exports.pullMovies = pullMovies;
