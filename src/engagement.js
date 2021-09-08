@@ -1,7 +1,6 @@
 import { pullId } from "./api";
 
-const apiEnd = 'danielAndpricillasWork';
-const commentsURL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${apiEnd}/comments`;
+const commentsURL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/HEoRb0SEeq8AkUfTDmOs/comments`;
 
 const createComment = async (obj) => {
     const commentBody = {
