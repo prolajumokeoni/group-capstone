@@ -1,8 +1,8 @@
-import { pullId } from "./api";
+import { pullId } from './api';
 
 // Comment Section
 const apiHead = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
-const apiApp = 'HEoRb0SEeq8AkUfTDmOs'
+const apiApp = 'HEoRb0SEeq8AkUfTDmOs';
 const commentsURL = `${apiHead}/${apiApp}/comments`;
 const likeURL = `${apiHead}/WeNeedToAddAnApiEndPointHERE/likes`;
 
