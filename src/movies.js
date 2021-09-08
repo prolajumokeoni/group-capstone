@@ -58,6 +58,7 @@ const displayMovies = async () => {
 
     const movieCount = getCount();
     updateTitles(movieCount);
-  };
+  }
 };
+
 export default displayMovies;

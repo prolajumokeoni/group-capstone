@@ -181,5 +181,4 @@ const pullLikes = async () => {
   return likes;
 };
 
-
 export { displayPopup, addLike, pullLikes };
