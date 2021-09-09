@@ -26,17 +26,19 @@ const displayMovies = async () => {
     }
 
     const image = movies[i].show.image?.medium ?? 'https://i.ibb.co/nPzyFm6/placeholder.png';
-    moviesList.insertAdjacentHTML('beforeend', ` 
-            <div class="movie-container">
+    moviesList.insertAdjacentHTML('beforeend', `
+          <div class="col-lg-4 col-md-6 col-sm-6 mb-5 shadow ">
+            <div class="movie-container card rounded">
                 <div class="movie-content">
-                <img src="${image}" />
+                  <img src="${image}" height="300px" width= "100%" />
                 </div>
-                <div>
-                  <h6>${movies[i].show.name}</h6>
+                  <h6 class="pl-3 pt-2">${movies[i].show.name}</h6>
+                <div class="pt-3 px-3 d-flex">
+                  <span like-id="${movies[i].show.id}" class="material-icons-outlined pl-3 pr-2">thumb_up</span>
                   <p>${numLikes}</p>
+                  <button data-id="${movies[i].show.id}" class="btn btn-primary btn-sm ml-2 mb-3">Comment</button>
                 </div>
-                <button data-id="${movies[i].show.id}" class="material-icons-outlined">mode_comment</button>
-                <span like-id="${movies[i].show.id}" class="material-icons-outlined">thumb_up</span>
+            </div>
             </div>`);
     const button = document.querySelectorAll(`[data-id="${movies[i].show.id}"]`)[0];
     button.addEventListener('click', (e) => {
