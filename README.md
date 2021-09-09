@@ -2,7 +2,7 @@
 
 # Group-Capstone
 
-> This is an API based webapp that displays movies and their titles. This is a single-page application(SPA) which contains the home page and comments modal pop-ups. Users can clike the `thumbs up` icon to give a like to their favorite and post comments by clicking on the `comment` button in the modal.  
+> This is an API based webapp that displays movies and their titles. This is a single-page application(SPA) which contains the home page and comments modal pop-ups. Users can click the `thumbs up` icon to give a like to their favorite and post comments by clicking on the `comment` button in the modal.  
 
 # Demo Link
 
