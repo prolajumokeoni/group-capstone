@@ -1,6 +1,9 @@
-import { pullId } from './api.js';
+import { pullId } from './api';
 
-const commentsURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/HEoRb0SEeq8AkUfTDmOs/comments';
+const apiHead = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
+const apiApp = 'MZpaps73wewnyNptjwlc';
+const commentsURL = `${apiHead}/${apiApp}/comments`;
+const likeURL = `${apiHead}/${apiApp}/likes`;
 
 const createComment = async (obj) => {
   const commentBody = {
@@ -151,4 +154,31 @@ const displayPopup = async (id) => {
   genPopupContent(movie);
 };
 
-export default displayPopup;
+const addLike = async (id) => {
+  const likeBody = {
+    item_id: id,
+  };
+
+  const response = await fetch(`${likeURL}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(likeBody),
+  });
+
+  return response.status;
+};
+
+const pullLikes = async () => {
+  try {
+    const response = await fetch(`${likeURL}`);
+    const likes = await response.json();
+
+    return likes;
+  } catch (error) {
+    return [];
+  }
+};
+
+export { displayPopup, addLike, pullLikes };
