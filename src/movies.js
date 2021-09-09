@@ -51,10 +51,12 @@ const displayMovies = async () => {
       const newLikeObject = newLikes.filter((like) => like.item_id === Number(movieId));
       const newNumLikes = newLikeObject[0].likes;
       const newLike = document.querySelectorAll(`[like-id="${movieId}"]`)[0];
-      status.status === '201' ? newLike.innerText = `${newNumLikes} likes` : newLike.innerText = `${newNumLikes} likes`;
+      if (status === 'success') {
+        newLike.innerText = `${newNumLikes} likes`;
+      }
       window.location.reload();
     });
-  };
+  }
 
   const movieCount = getCount();
   updateTitles(movieCount);
