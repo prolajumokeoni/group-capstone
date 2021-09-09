@@ -1,7 +1,7 @@
 import { pullId } from './api';
 
 const apiHead = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
-const apiApp = 'MZpaps73wewnyNptjwlc';
+const apiApp = 'YQ7WFyq4DimB3lfs5mdI';
 const commentsURL = `${apiHead}/${apiApp}/comments`;
 const likeURL = `${apiHead}/${apiApp}/likes`;
 
@@ -71,28 +71,31 @@ const genPopupContent = async (movie) => {
   popup.insertAdjacentHTML('beforeend', ` 
       <div class="popup-container">
         <div class="inner-content">
-          <div class="photo-close">
+          <div class="photo-close d-flex">
             <img src="${image}" />
             <span type="button" class="material-icons-outlined close-popup">close</span>
           </div>
-          <h2>${movie.name}</h2>
-          <div class="movie-description-1">
+          <h1>${movie.name}</h1>
+          <div class="d-flex">
+          <div class="">
             <p>Type: ${movie.type}</p>
             <p>Language: ${movie.language}</p>
           </div>
-          <div class="movie-description-2">
+          <div class="pl-2">
             <p>Status: ${movie.status}</p>
             <p>Premiered: ${movie.premiered}</p>
+          </div>
           </div>
           <div class="comments-display">
             ${commentBlock}
           </div>
           <div class="comment-create">
             <h3>Add a comment</h3>
-            <input name="username" placeholder="Your username" />
-            <textarea name="insights" rows="3" placeholder="Your comments"></textarea>
+            <input name="username" class="form-control" placeholder="Your username"/>
+            <textarea name="insights" class="form-control" rows="3" placeholder="Your comments"></textarea>
             <span type="button" comment-id="${movie.id}" class="material-icons-outlined">comment</span>
-          </div>
+            <p>Comment</p>
+            </div>
         </div>
       </div>`);
   document.querySelector('main').appendChild(popup);
