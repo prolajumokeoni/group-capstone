@@ -1,44 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Space+Mono:ital,wght@1,700&display=swap');
+
 body {
-  background-color: rgb(235, 232, 232);
+  background-color: #000a24;
+  color: #000a24;
+  font-family: 'Lato', sans-serif;
 }
-
-.logo {
-  width: 6rem;
-}
-
-.movies-display {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.movie-container {
-  width: 20%;
-  margin: 20px 0;
-}
-
 
 .popup {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(36, 35, 35, 0.3);
   width: 100%;
   height: 100vh;
   z-index: 19;
-  color: purple;
 }
 
 .popup-container {
   overflow-y: scroll;
   position: fixed;
-  border: 2px solid rgb(133, 47, 121);
+  border: 2px solid #000a24;
   border-radius: 30px;
-  left: calc(50% - 350px);
-  height: 550px;
-  width: 700px;
+  left: calc(50% - 250px);
+  height: 500px;
+  width: 600px;
+  margin-top: 80px;
   padding: 25px;
   background-color: rgb(235, 235, 235);
   z-index: 20;
@@ -58,8 +44,8 @@ textarea[name="insights"] {
 }
 
 .photo-close img {
-  width: 400px;
-  height: auto;
+  width: 300px;
+  height: 300px;
 }
 
 .photo-close span {
@@ -67,10 +53,15 @@ textarea[name="insights"] {
   padding-bottom: 15px;
 }
 
-
-
 .btn-add-comment {
   margin: 20px 0;
   align-self: flex-end;
 }
 
+.movies-display {
+  margin-top: 60px;
+}
+footer,
+.footer-margin {
+  margin-bottom: 0;
+}
