@@ -30,7 +30,7 @@ body {
   overflow-y: auto;
 }
 
-.inner-content, 
+.inner-content,
 .comment-create {
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@ body {
   justify-content: space-around;
 }
 
-input[name="username"], 
+input[name="username"],
 textarea[name="insights"] {
   margin-bottom: 20px;
 }
@@ -73,7 +73,7 @@ textarea[name="insights"] {
   z-index: 19;
 }
 
-footer, 
+footer,
 .footer-margin {
   margin-bottom: 0;
 }
