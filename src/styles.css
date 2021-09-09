@@ -52,6 +52,7 @@ textarea[name="insights"] {
 
 .fixed-top {
   z-index: 20;
+  box-shadow: 0 12px 16px 6px rgb(0 0 0 / 5%);
 }
 
 .photo-close span {
@@ -71,6 +72,8 @@ textarea[name="insights"] {
 
 .footer-z {
   z-index: 19;
+  font-family: inherit;
+  text-align: center;
 }
 
 footer,
@@ -83,6 +86,10 @@ footer,
   flex-direction: row;
   align-content: space-between;
   gap: 10px;
+}
+
+.center-it:hover {
+  cursor: pointer;
 }
 
 .separation {
@@ -129,6 +136,6 @@ footer,
   color: blue;
 }
 
-h6 {
+.move-c {
   text-align: center;
 }
