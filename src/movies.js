@@ -33,10 +33,10 @@ const displayMovies = async () => {
                   <img src="${image}" height="300px" width= "100%" />
                 </div>
                   <h6 class="pl-3 pt-2">${movies[i].show.name}</h6>
-                <div class="pt-3 px-3 d-flex">
-                  <span like-id="${movies[i].show.id}" class="material-icons-outlined pl-3 pr-2">thumb_up</span>
-                  <p>${numLikes}</p>
-                  <button data-id="${movies[i].show.id}" class="btn btn-primary btn-sm ml-2 mb-3">Comment</button>
+                <div class="pt-3 px-3 d-flex separation">
+                  <span like-id="${movies[i].show.id}" class="material-icons-outlined pl-3 pt-2 pr-2 like">thumb_up</span>
+                  <p class="pt-2" >${numLikes}</p>
+                  <button data-id="${movies[i].show.id}" class="material-icons-outlined btn btn-primary btn-sm ml-2 mb-3">comment</button>
                 </div>
             </div>
             </div>`);
