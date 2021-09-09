@@ -93,7 +93,7 @@ const genPopupContent = async (movie) => {
             <h3>Add a comment</h3>
             <input name="username" class="form-control" placeholder="Your username"/>
             <textarea name="insights" class="form-control" rows="3" placeholder="Your comments"></textarea>
-            <span class="center-it" type="button" comment-id="${movie.id}"><i class="material-icons-outlined">comment</i>Comment</span>
+            <span class="center-it" type="button" comment-id="${movie.id}"><i class="material-icons-outlined">mode_comment</i>Comment</span>
             </div>
         </div>
       </div>`);
