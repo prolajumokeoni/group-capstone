@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Space+Mono:ital,wght@1,700&display=swap');
+
 body {
-  /* background-color: #000a24; */
   color: #000a24;
   font-family: 'Lato', sans-serif;
-background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
 }
 
 .popup {
@@ -30,14 +30,16 @@ background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
   overflow-y: auto;
 }
 
-.inner-content, .comment-create {
+.inner-content,
+.comment-create {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
 
-input[name="username"], textarea[name="insights"] {
+input[name="username"],
+textarea[name="insights"] {
   margin-bottom: 20px;
 }
 
@@ -71,7 +73,8 @@ input[name="username"], textarea[name="insights"] {
   z-index: 19;
 }
 
-footer, .footer-margin {
+footer,
+.footer-margin {
   margin-bottom: 0;
 }
 
