@@ -32,7 +32,7 @@ const displayMovies = async () => {
                 <div class="movie-content">
                   <img class="img-top" src="${image}" height="300px" width= "100%" />
                 </div>
-                  <h6 class="pl-3 pt-2">${movies[i].show.name}</h6>
+                  <h6 class="move-c pl-3 pt-2">${movies[i].show.name}</h6>
                 <div class="pt-3 px-3 d-flex separation">
                   <span like-id="${movies[i].show.id}" class="material-icons-outlined pl-3 btn pt-2 pr-2 like">thumb_up</span>
                   <p class="pt-2" >${numLikes}</p>
