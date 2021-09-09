@@ -18,3 +18,59 @@ body {
   width: 20%;
   margin: 20px 0;
 }
+
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100vh;
+  z-index: 19;
+  color: purple;
+}
+
+.popup-container {
+  overflow-y: scroll;
+  position: fixed;
+  border: 2px solid rgb(133, 47, 121);
+  border-radius: 30px;
+  left: calc(50% - 350px);
+  height: 550px;
+  width: 700px;
+  padding: 25px;
+  background-color: rgb(235, 235, 235);
+  z-index: 20;
+}
+
+.inner-content,
+.comment-create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+input[name="username"],
+textarea[name="insights"] {
+  margin-bottom: 20px;
+}
+
+.photo-close img {
+  width: 400px;
+  height: auto;
+}
+
+.photo-close span {
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
+
+
+.btn-add-comment {
+  margin: 20px 0;
+  align-self: flex-end;
+}
+
