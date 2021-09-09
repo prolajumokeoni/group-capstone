@@ -30,13 +30,13 @@ const displayMovies = async () => {
           <div class="col-lg-4 col-md-6 col-sm-6 mb-5 shadow ">
             <div class="movie-container card rounded">
                 <div class="movie-content">
-                  <img src="${image}" height="300px" width= "100%" />
+                  <img class="img-top" src="${image}" height="300px" width= "100%" />
                 </div>
                   <h6 class="pl-3 pt-2">${movies[i].show.name}</h6>
                 <div class="pt-3 px-3 d-flex separation">
-                  <span like-id="${movies[i].show.id}" class="material-icons-outlined pl-3 pt-2 pr-2 like">thumb_up</span>
+                  <span like-id="${movies[i].show.id}" class="material-icons-outlined pl-3 btn pt-2 pr-2 like">thumb_up</span>
                   <p class="pt-2" >${numLikes}</p>
-                  <button data-id="${movies[i].show.id}" class="material-icons-outlined btn btn-primary btn-sm ml-2 mb-3">comment</button>
+                  <button data-id="${movies[i].show.id}" class="material-icons-outlined btn btn-sm ml-2 mb-3">mode_comment</button>
                 </div>
             </div>
             </div>`);
