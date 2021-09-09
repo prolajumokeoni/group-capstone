@@ -6,7 +6,7 @@
 
 # Demo Link
 
-Click [here](https://mmatongo.github.io/group-capstone/dist//) to view the website online.
+Click [here](https://mmatongo.github.io/group-capstone/dist/) to view the website online.
 # Screenshot
 
 Width - 1440px
@@ -69,7 +69,7 @@ GIT
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../issues).
+Feel free to check the [issues page](https://github.com/mmatongo/group-capstone/issues).
 
 # Show your support
 
