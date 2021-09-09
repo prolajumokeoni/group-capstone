@@ -128,3 +128,7 @@ footer,
 .btn:hover {
   color: blue;
 }
+
+h6 {
+  text-align: center;
+}
