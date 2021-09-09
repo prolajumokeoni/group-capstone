@@ -3,7 +3,7 @@
 */
 
 describe('Test Comments adding Functionality', () => {
-    document.body.innerHTML = `
+  document.body.innerHTML = `
       <div class="popup-container">
         <div class="inner-content">
           <div class="photo-close d-flex">
@@ -32,42 +32,42 @@ describe('Test Comments adding Functionality', () => {
       </div>
     `;
 
-    const calcComments = (commentId) => {
-        const commentContent = document.querySelectorAll(`[comment-id="${commentId}"]`)[0]
-            .parentElement.previousElementSibling.children;
+  const calcComments = (commentId) => {
+    const commentContent = document.querySelectorAll(`[comment-id="${commentId}"]`)[0]
+      .parentElement.previousElementSibling.children;
 
-        const commentCount = [...commentContent].filter((elem) => elem.nodeName === 'P').length;
+    const commentCount = [...commentContent].filter((elem) => elem.nodeName === 'P').length;
 
-        return commentCount;
-    };
+    return commentCount;
+  };
 
-    const updateTitle = (id) => {
-        const commentCount = calcComments(id);
+  const updateTitle = (id) => {
+    const commentCount = calcComments(id);
 
-        const commentContent = document.querySelectorAll(`[comment-id="${id}"]`)[0]
-            .parentElement.previousElementSibling.children;
+    const commentContent = document.querySelectorAll(`[comment-id="${id}"]`)[0]
+      .parentElement.previousElementSibling.children;
 
-        if (commentContent.length > 0) {
-            const commentTitle = [...commentContent].filter((elem) => elem.nodeName === 'H3')[0];
+    if (commentContent.length > 0) {
+      const commentTitle = [...commentContent].filter((elem) => elem.nodeName === 'H3')[0];
 
-            commentTitle.innerText = `Comments (${commentCount})`;
-        }
-    };
+      commentTitle.innerText = `Comments (${commentCount})`;
+    }
+  };
 
-    const addComment = () => {
-        const commentsDisplay = document.getElementsByClassName('comments-display')[0];
-        commentsDisplay.insertAdjacentHTML('beforeend', `
+  const addComment = () => {
+    const commentsDisplay = document.getElementsByClassName('comments-display')[0];
+    commentsDisplay.insertAdjacentHTML('beforeend', `
         <p>09/09/2021 Test User: This is a test comment!</p>
       `);
-    };
+  };
 
-    test('Verify that no comments exist on start.', () => {
-        expect(calcComments(42069)).toBe(0);
-    });
+  test('Verify that no comments exist on start.', () => {
+    expect(calcComments(42069)).toBe(0);
+  });
 
-    test('Veify that a single comment has been added.', () => {
-        addComment();
-        updateTitle(42069);
-        expect(calcComments(42069)).toBe(1);
-    });
+  test('Veify that a single comment has been added.', () => {
+    addComment();
+    updateTitle(42069);
+    expect(calcComments(42069)).toBe(1);
+  });
 });
