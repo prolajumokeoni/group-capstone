@@ -81,6 +81,10 @@ footer,
   margin-bottom: 0;
 }
 
+.errmsg {
+  color: red;
+}
+
 .center-it {
   display: flex;
   flex-direction: row;

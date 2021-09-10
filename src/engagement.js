@@ -91,6 +91,7 @@ const genPopupContent = async (movie) => {
           </div>
           <div class="comment-create">
             <h3>Add a comment</h3>
+            <div id="errorMsg" class="errmsg"></div>
             <input name="username" class="form-control" placeholder="Your username"/>
             <textarea name="insights" class="form-control" rows="3" placeholder="Your comments"></textarea>
             <span class="center-it" type="button" comment-id="${movie.id}"><i class="material-icons-outlined">mode_comment</i>Comment</span>
@@ -125,9 +126,10 @@ const genPopupContent = async (movie) => {
       username: commentButton.previousElementSibling.previousElementSibling.value,
       comment: commentButton.previousElementSibling.value,
     };
-
-    const result = await createComment(commentObject);
-
+    
+    if (commentObject.username && commentObject.comment) {
+      const result = await createComment(commentObject);
+      e.target.parentElement.children[1].innerHTML = " " 
     if (result === 201) {
       const comments = await getComments(movieId);
       const lastComment = comments[comments.length - 1];
@@ -147,6 +149,9 @@ const genPopupContent = async (movie) => {
           `);
       }
       updateCommentTitle(movie.id);
+    }
+    } else {
+      e.target.parentElement.children[1].innerHTML = "Username and comment required" 
     }
   });
 };
