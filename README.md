@@ -7,6 +7,9 @@
 # Demo Link
 
 Click [here](https://mmatongo.github.io/group-capstone/dist/) to view the website online.
+
+# Video Link 
+Click [here](https://youtu.be/X3809LCFK9s)
 # Screenshot
 
 Width - 1440px
