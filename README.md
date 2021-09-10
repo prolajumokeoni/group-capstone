@@ -62,8 +62,8 @@ GIT
 
 👤 **Oni Olajumuke Priscilla**
 
-- GitHub: [Oni Olajumuke Priscilla](https://github.com/prolajumokeoni)
-- LinkedIn: [Adedamola Shittu](https://www.linkedin.com/in/olajumoke-priscilla-oni-44a48b162/)
+- GitHub: [Oni Olajumoke Priscilla](https://github.com/prolajumokeoni)
+- LinkedIn: [Oni Olajumoke Priscilla](https://www.linkedin.com/in/prolajumokeoni/)
 
 # 🤝 Contributing
 
