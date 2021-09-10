@@ -1,4 +1,4 @@
-import { pullId } from './api';
+import { pullId } from './api.js';
 
 const apiHead = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
 const apiApp = 'IWf3COm5aU7E5iifRsF3';
@@ -35,10 +35,13 @@ const getComments = async (id) => {
 };
 
 const getCommentsNumber = (commentId) => {
-  const commentsContent = document.querySelectorAll(`[comment-id="${commentId}"]`)[0]
-    .parentElement.previousElementSibling.children;
+  const commentsContent = document.querySelectorAll(
+    `[comment-id="${commentId}"]`,
+  )[0].parentElement.previousElementSibling.children;
 
-  const commentsCount = [...commentsContent].filter((elem) => elem.nodeName === 'P').length;
+  const commentsCount = [...commentsContent].filter(
+    (elem) => elem.nodeName === 'P',
+  ).length;
 
   return commentsCount;
 };
@@ -50,7 +53,9 @@ const updateCommentTitle = (id) => {
     .parentElement.previousElementSibling.children;
 
   if (commentsContent.length > 0) {
-    const commentTitle = [...commentsContent].filter((elem) => elem.nodeName === 'H3')[0];
+    const commentTitle = [...commentsContent].filter(
+      (elem) => elem.nodeName === 'H3',
+    )[0];
 
     commentTitle.innerText = `Comments (${numberOfComments})`;
   }
@@ -68,7 +73,9 @@ const genPopupContent = async (movie) => {
 
   let commentBlock = '';
 
-  popup.insertAdjacentHTML('beforeend', ` 
+  popup.insertAdjacentHTML(
+    'beforeend',
+    ` 
       <div class="popup-container">
         <div class="inner-content">
           <div class="photo-close d-flex">
@@ -97,15 +104,17 @@ const genPopupContent = async (movie) => {
             <span class="center-it" type="button" comment-id="${movie.id}"><i class="material-icons-outlined">mode_comment</i>Comment</span>
             </div>
         </div>
-      </div>`);
+      </div>`,
+  );
   document.querySelector('main').appendChild(popup);
   const closeButton = document.getElementsByClassName('close-popup')[0];
   closeButton.addEventListener('click', () => {
     document.querySelector('.popup').remove();
   });
 
-  const commentsDisplay = document.querySelectorAll(`[comment-id="${movie.id}"]`)[0]
-    .parentElement.previousElementSibling;
+  const commentsDisplay = document.querySelectorAll(
+    `[comment-id="${movie.id}"]`,
+  )[0].parentElement.previousElementSibling;
 
   if (comments.length > 0) {
     commentBlock += '<h3>Comments</h3>';
@@ -119,39 +128,49 @@ const genPopupContent = async (movie) => {
 
   updateCommentTitle(movie.id);
 
-  const commentButton = document.querySelectorAll(`[comment-id="${movie.id}"]`)[0];
+  const commentButton = document.querySelectorAll(
+    `[comment-id="${movie.id}"]`,
+  )[0];
   commentButton.addEventListener('click', async (e) => {
     const commentObject = {
       item_id: Number(e.target.getAttribute('comment-id')),
-      username: commentButton.previousElementSibling.previousElementSibling.value,
+      username:
+        commentButton.previousElementSibling.previousElementSibling.value,
       comment: commentButton.previousElementSibling.value,
     };
-    
+
     if (commentObject.username && commentObject.comment) {
       const result = await createComment(commentObject);
-      e.target.parentElement.children[1].innerHTML = " " 
-    if (result === 201) {
-      const comments = await getComments(movieId);
-      const lastComment = comments[comments.length - 1];
-      const commentsDisplay = document.querySelectorAll(`[comment-id="${movie.id}"]`)[0]
-        .parentElement.previousElementSibling;
-      const date = lastComment.creation_date.split('-');
-      const dateFormated = `${date[1]}/${date[2]}/${date[0]}`;
+      e.target.parentElement.children[1].innerHTML = ' ';
+      if (result === 201) {
+        const comments = await getComments(movieId);
+        const lastComment = comments[comments.length - 1];
+        const commentsDisplay = document.querySelectorAll(
+          `[comment-id="${movie.id}"]`,
+        )[0].parentElement.previousElementSibling;
+        const date = lastComment.creation_date.split('-');
+        const dateFormated = `${date[1]}/${date[2]}/${date[0]}`;
 
-      if (comments.length === 1) {
-        commentsDisplay.insertAdjacentHTML('beforeend', `
+        if (comments.length === 1) {
+          commentsDisplay.insertAdjacentHTML(
+            'beforeend',
+            `
             <h3>Comments</h3>
             <p>${dateFormated} ${lastComment.username}: ${lastComment.comment}</p>
-          `);
-      } else {
-        commentsDisplay.insertAdjacentHTML('beforeend', `
+          `,
+          );
+        } else {
+          commentsDisplay.insertAdjacentHTML(
+            'beforeend',
+            `
             <p>${dateFormated} ${lastComment.username}: ${lastComment.comment}</p>
-          `);
+          `,
+          );
+        }
+        updateCommentTitle(movie.id);
       }
-      updateCommentTitle(movie.id);
-    }
     } else {
-      e.target.parentElement.children[1].innerHTML = "Username and comment required" 
+      e.target.parentElement.children[1].innerHTML = 'Username and comment required';
     }
   });
 };

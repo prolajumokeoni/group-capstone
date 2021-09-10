@@ -1,5 +1,5 @@
-import { pullMovies } from './api';
-import { displayPopup, pullLikes, addLike } from './engagement';
+import { pullMovies } from './api.js';
+import { displayPopup, pullLikes, addLike } from './engagement.js';
 
 const getCount = () => {
   const movieCount = document.getElementById('movies').children.length;
